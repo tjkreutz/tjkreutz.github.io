@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<img id='picture' src='img/construction.png'></img>
+<div id="intro">
+  <h2>Welcome</h2>
+  <p>This blog is currently being overhauled. The author still has to get used to Jekyll. The learning curve is not that steep. Eventually this little paragraph should contain some information and links to projects. Also, it should give a short description of its author.</p>
+  <h2>Posts</h2>
+</div>
+<table>
+  {% for post in site.posts %}
+  <tr>
+  {% assign currentyear = post.date | date: "%Y" %}
+  {% assign currentmonth = post.date | date: "%b" %}
+  {% if currentyear != year %}
+    {% assign year = currentyear %}
+    {% assign month = "1990" %}
+    <td valign="baseline">{{ currentyear }}</td>
+    {% else %}
+    <td class="hierarchy"></td>
+  {% endif %}
+  {% if currentmonth != month %}
+    {% assign month = currentmonth %}
+    <td valign="baseline"><span class="hierarchy">{{ currentmonth }}
+    {% else %}
+    <td><span class="hierarchy">
+  {% endif %}
+  {{ post.date | date: "%-d" }}</span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
+  <td>0</td>
+  </tr>
+  {% endfor %}
+</div>

@@ -1,0 +1,94 @@
+#intro {
+  margin: 0px 80px;
+  text-align: justify;
+}
+
+#picture {
+  display: block;
+  margin: auto;
+}
+.hierarchy {
+  display: inline-block;
+  width: 48px;
+  text-align: right;
+  margin-right: 16px;
+}
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+}
+
+.page-heading {
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.post-list {
+    margin-left: 0;
+    margin-top: $spacing-unit;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+}
+
+.post-link {
+    display: block;
+    font-size: 24px;
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 24px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 24px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+}
