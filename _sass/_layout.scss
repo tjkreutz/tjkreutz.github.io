@@ -1,22 +1,32 @@
+li {
+    display:inline;
+    padding-right: 8px;
+}
+
 .year {
   line-height: 64%
 }
 
 #intro {
-  margin: 0px 80px;
+  margin: 0 10%;
   text-align: justify;
 }
 
-#picture {
+.picture {
   display: block;
   margin: auto;
+  min-width: 120px;
+}
+
+.spacer {
+  width: 10%;
 }
 
 .hierarchy {
   display: inline-block;
   width: 48px;
   text-align: right;
-  margin-right: 16px;
+  margin-right: 8px;
 }
 /**
  * Page content
@@ -27,7 +37,6 @@
 
 .site-header {
     background-color: white;
-    text-align: center;
 }
 
 .page-heading {
@@ -47,6 +56,7 @@
 }
 
 .post-meta {
+    font-family: "Lucida Console", Monaco, monospace;
     font-size: $small-font-size;
     color: $grey-color;
 }

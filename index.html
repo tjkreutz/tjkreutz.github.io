@@ -3,18 +3,16 @@ layout: default
 ---
 
 <div id="intro">
-  <img id='picture' src='img/construction.png'></img>
-  <h2><a href="{{ site.baseurl }}/2016/02/27/about.html">What's this?</a></h2>
-  <header class="post-header">
-    <p class="post-meta"><time datetime="2016-02-27T21:03:33+01:00" itemprop="datePublished">Feb 27, 2016</time></p>
-  </header>
-  <div class="post-content" itemprop="articleBody">
-      <p>This is an attempt at a programming/personal interest blog by me, Tim Kreutz, to document some of the things I do for later reference. It will hopefully also serve as a tool to make me want to finish <a href="{{ site.baseurl }}/musicmood/">my humble undertakings</a> as opposed to adding them to my <a href="{{ site.baseurl }}/soepvandedag/">“pile of unfinished projects”</a>. Its objective is thus of a selfish nature and the only reason it is made public at all, is to reinforce the idea that it actually matters what I write, and, in the off case that it may actually help or entertain someone, to interact with readers.</p>
-      <p>In the latter case, please leave a comment or connect to me through one of the <a href="{{ site.baseurl }}/social/">social tools</a> I use.</p>
-  </div>
-
+  <img class='picture' src='img/construction.png'></img>
+  {% for post in site.posts %}
+   {% if post.featured == true %}
+     <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+     {{ post.content }}
+   {% endif %}
+  {% endfor %}
   <h2>Posts</h2>
 </div>
+
 <table>
   {% for post in site.posts %}
   <tr>
@@ -33,8 +31,10 @@ layout: default
     {% else %}
     <td><span class="hierarchy">
   {% endif %}
-  {{ post.date | date: "%-d" }}</span><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-  <p class="post-meta">{{ post.date }} | 0 comments | keywords: personal, programming</p></td>
+  {{ post.date | date: "%-d" }}</span><b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></b>
+  <p class="post-meta">Last modified: {{ post.date | date_to_string }} | 0 comments | keywords: {{ post.tags | array_to_sentence_string }}.</p></td>
+  <td><img class='picture' src={{ post.thumbnail }} border="1"></img></td>
+  <td class='spacer'></td>
   </tr>
   {% endfor %}
 </div>
