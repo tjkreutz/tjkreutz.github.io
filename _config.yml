@@ -8,9 +8,9 @@
 # Site settings
 title: Tim Kreutz - Blog
 email: tjkreutz@gmail.com
-baseurl: ""
-destination: ../timkreutz/
-keep_files: [musicmood, nieuwstwiets, soepvandedag, wallpaper]
+baseurl: "/blog"
+destination: ../timkreutz.nl/blog/
+keep_files: []
 url: "http://www.timkreutz.nl" # the base hostname & protocol for your site
 twitter_username: tjkreutz
 github_username:  tjkreutz

@@ -34,9 +34,12 @@ class Post():
             filehandle.write(newline)
         filehandle.write(closetag)
         filehandle.write(newline)
-        filehandle.write(self.text)
+        filehandle.write(self.get_text())
         filehandle.close()
-        
+    
+    def get_text(self):
+        return self.text    
+    
     def get_meta(self):
         return self.meta
 
