@@ -3,10 +3,6 @@ li {
     padding-right: 8px;
 }
 
-li:hover {
-    color: yellow;
-}
-
 .year {
   line-height: 64%
 }
@@ -16,10 +12,15 @@ li:hover {
   text-align: justify;
 }
 
-.picture {
-  float: right;
+#avatar {
   margin: auto;
   display: block;
+}
+
+.thumbnail {
+  border: 1px solid black;
+  float: right;
+  margin: auto;
   min-width: 120px;
 }
 
