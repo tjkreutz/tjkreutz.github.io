@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "What's this?"
-date:   2016-02-27 21:03:33 +0100
-tags:   [programming, personal, project, social, comment]
-thumbnail:  '/img/thumbnail-1.png'
+date: 2016-02-27 21:03:33 +0100
+keywords: ['icon', 'tjkreutz', 'the', 'to', 'twitter']
+title: "What's this?"
+thumbnail: '/img/thumbnail-1.png'
 featured: true
 ---
 

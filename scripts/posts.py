@@ -30,7 +30,7 @@ class Post():
         filehandle.write(closetag)
         filehandle.write(newline)
         for tag, value in self.meta.items():
-            filehandle.write(':'.join((tag, value)))
+            filehandle.write(': '.join((tag, value)))
             filehandle.write(newline)
         filehandle.write(closetag)
         filehandle.write(newline)
@@ -44,7 +44,7 @@ class Post():
         return self.meta
 
     def add_meta(self, tuple):
-        self.meta[tuple[0]] = tuple[1:]
+        self.meta[tuple[0]] = str(tuple[1:])
 
 def read_posts(dir):
     posts = []
