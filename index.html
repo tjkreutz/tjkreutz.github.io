@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div id="intro">
-  <img id="avatar" src="img/construction.png"></img>
+  <img id="avatar" src="{{ site.baseurl }}/img/construction.png"></img>
   {% for post in site.posts %}
    {% if post.featured == true %}
      <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
@@ -33,7 +33,7 @@ layout: default
   {% endif %}
   {{ post.date | date: "%-d" }}</span><b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></b>
   <p class="post-meta">Last modified: {{ post.date | date_to_string }} | 0 comments | keywords: {{ post.keywords | array_to_sentence_string }}.</p></td>
-  <td><img class="thumbnail" src={{ post.thumbnail }}></img></td>
+  <td><img class="thumbnail" src={{ post.thumbnail | prepend: site.baseurl}}></img></td>
   <td class="spacer"></td>
   </tr>
   {% endfor %}
