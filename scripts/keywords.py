@@ -18,7 +18,7 @@ def main(dir):
     
     for doc in tfidf:
         zipped = zip(doc.data, doc.indices)
-        sortedwords = [features[ind] for data, ind in reversed(sorted(zipped))]
+        sortedwords = [features[ind] for data, ind in sorted(zipped)]
         topfive = sortedwords[:5]
         curpost = allposts[postid]
         curpost.add_meta(['keywords'] + topfive)
