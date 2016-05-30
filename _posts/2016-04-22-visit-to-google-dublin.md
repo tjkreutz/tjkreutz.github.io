@@ -23,4 +23,4 @@ But once that experience settles you change your perspective. First, the people 
 
 You can then only conclude one thing. I am a few steps closer to being a Google employee than a person who did not get to visit Google Dublin.
 
-![Group picture](/img/IMG_1395.JPG)
+![Group picture]({{ "/img/IMG_1395.JPG" | prepend: site.baseurl }})

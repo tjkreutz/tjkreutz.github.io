@@ -10,7 +10,7 @@ title: Tim Kreutz - blog
 email: tjkreutz@gmail.com
 baseurl: "/blog"
 keep_files: []
-destination: ../timkreutz.nl/blog
+destination: ../www/blog
 url: "http://www.timkreutz.nl" # the base hostname & protocol for your site
 twitter_username: tjkreutz
 github_username:  tjkreutz
