@@ -14,9 +14,9 @@ destination: ../www/blog
 url: "http://www.timkreutz.nl" # the base hostname & protocol for your site
 twitter_username: tjkreutz
 github_username:  tjkreutz
-featured_post: '2016-02-27-first-post.md'
+featured_post: '2016-02-27-whats-this.md'
 
 # Build settings
-highlighter: rouge
+highlighter: pygments
 markdown: kramdown
 permalink: pretty
