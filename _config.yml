@@ -17,6 +17,6 @@ github_username:  tjkreutz
 featured_post: '2016-02-27-whats-this.md'
 
 # Build settings
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 permalink: pretty
