@@ -1,2 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-_config.yml
+.idea/
+.sass-cache/
+scripts/__pycache__/
