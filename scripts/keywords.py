@@ -1,13 +1,11 @@
-#!/usr/bin/env python3
-
 import sys
 import posts
-import numpy
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-def main(dir):
 
-    allposts = posts.read_posts(dir)
+def main(directory):
+
+    allposts = posts.read_posts(directory)
     alltexts = [post.get_text() for post in allposts]
     
     vec = TfidfVectorizer()
@@ -22,11 +20,11 @@ def main(dir):
         topfive = sortedwords[:5]
         curpost = allposts[postid]
         curpost.add_meta(['keywords'] + topfive)
-        curpost.write(dir + '/' + curpost.filename)
+        curpost.write(directory + '/' + curpost.filename)
         postid += 1
         
 if __name__ == '__main__':
     if not len(sys.argv) == 2:
         print('Error: wrong number of arguments. Usage: ./keywords.py <_POSTS DIR>')
     else:
-       main(sys.argv[1])
+        main(sys.argv[1])

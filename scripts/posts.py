@@ -1,10 +1,11 @@
 import os
 
-class Post():
-    def __init__(self, dir, filename):
-        self.dir = dir
+
+class Post:
+    def __init__(self, directory, filename):
+        self.directory = directory
         self.filename = filename
-        self.meta, self.text = self.read(os.path.join(dir,filename))
+        self.meta, self.text = self.read(os.path.join(directory, filename))
 
     def read(self, filepath):
         filehandle = open(filepath, 'r')
@@ -43,18 +44,19 @@ class Post():
     def get_meta(self):
         return self.meta
 
-    def add_meta(self, tuple):
-        self.meta[tuple[0]] = str(tuple[1:])
+    def add_meta(self, metatuple):
+        self.meta[metatuple[0]] = str(metatuple[1:])
 
-def read_posts(dir):
+
+def read_posts(directory):
     posts = []
-    for filename in os.listdir(dir):
+    for filename in os.listdir(directory):
         if filename.endswith(('md', 'markdown')):
-            post = Post(dir, filename)
+            post = Post(directory, filename)
             posts.append(post)
     return posts
+
 
 def write_posts(posts):
     for post in posts:
         post.write()
-    
