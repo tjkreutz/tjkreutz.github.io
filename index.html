@@ -3,7 +3,6 @@ layout: default
 ---
 
 <div id="intro">
-  <img id="avatar" src="{{ site.baseurl }}/img/construction.png"></img>
   {% for post in site.posts %}
    {% if post.featured == true %}
      <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
