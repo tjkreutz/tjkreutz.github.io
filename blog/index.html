@@ -2,10 +2,11 @@
 layout: default
 ---
 
-<h2>Posts</h2>
+<h2>Blog</h2>
 
 <table>
   {% for post in site.posts %}
+  {% if post.type == "blog" %}
   <tr>
   {% assign currentyear = post.date | date: "%Y" %}
   {% assign currentmonth = post.date | date: "%b" %}
@@ -27,5 +28,6 @@ layout: default
   <td><img class="thumbnail" src={{ post.thumbnail | prepend: site.baseurl}}></img></td>
   <td class="spacer"></td>
   </tr>
+  {% endif %}
   {% endfor %}
-</div>
+</table>

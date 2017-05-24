@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<h2>Plog</h2>
+
+<table>
+  {% for post in site.posts %}
+  {% if post.type == "plog" %}
+  <tr>
+    <td class="spacer">{{ post.location }} - </td>
+    <td><b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: '%B %d, %Y' }}</a></b></td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+</table>
