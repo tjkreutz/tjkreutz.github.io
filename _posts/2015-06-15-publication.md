@@ -1,12 +1,12 @@
 ---
-layout: redirect
-authors: ['Tim Kreutz']
-redirect: /files/Kreutz.pdf
-title: "Detecting news event commentary on Twitter"
-keywords: ['news', 'tweets', 'article', 'relevant', 'data']
-date: 2015-06-15 21:03:33 +0100
 place: Bachelor thesis at University of Groningen
+redirect: /files/Kreutz.pdf
+keywords: ['news', 'tweets', 'article', 'relevant', 'data']
+layout: redirect-internal
+date: 2015-06-15 21:03:33 +0100
 type: publication
+authors: ['Tim Kreutz']
+title: "Detecting news event commentary on Twitter"
 ---
 
 Detecting news event commentary on Twitter

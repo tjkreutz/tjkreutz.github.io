@@ -1,11 +1,11 @@
 ---
-layout: redirect
+place: CLEF 2016 Evaluation Labs and Workshop – Working Notes Papers
+keywords: ['data', 'features', 'age', 'gender', 'english']
+layout: redirect-internal
+date: 2016-09-08 21:03:33 +0100
+type: publication
 authors: ['Mart Busger op Vollenbroek et. al.']
 title: "GronUP: Groningen User Profiling"
-keywords: ['data', 'age', 'gender', 'features', 'english']
-date: 2016-09-08 21:03:33 +0100
-place: CLEF 2016 Evaluation Labs and Workshop – Working Notes Papers
-type: publication
 ---
 
 GronUP: Groningen User Profiling

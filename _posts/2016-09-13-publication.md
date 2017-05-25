@@ -1,12 +1,12 @@
 ---
-layout: redirect
-authors: ['Tim Kreutz', 'Malvina Nissim']
-redirect: /files/KreutzNissim.pdf
-title: "Catching Events in the Twitter Stream"
-keywords: ['tweets', 'events', 'event', 'detection', '2015']
-date: 2016-09-13 21:03:33 +0100
 place: International Workshop on Social Media World Sensors (Sideways) Proceedings
+redirect: /files/KreutzNissim.pdf
+keywords: ['tweets', 'events', 'event', 'detection', '2015']
+layout: redirect-internal
+date: 2016-09-13 21:03:33 +0100
 type: publication
+authors: ['Tim Kreutz', 'Malvina Nissim']
+title: "Catching Events in the Twitter Stream"
 ---
 
 Catching Events in the Twitter Stream:

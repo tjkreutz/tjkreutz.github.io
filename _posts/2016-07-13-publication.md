@@ -1,0 +1,25 @@
+---
+place: http://www.rug.nl/
+redirect: http://www.rug.nl/let/organization/actueel/nieuwsberichten-2016/2016-07-13-students-information-science-win-competition?lang=en
+keywords: ['profiling', 'pan', 'master', 'international', 'author']
+layout: redirect-external
+date: 2016-07-13 21:03:33 +0100
+type: publication
+authors: ['University of Groningen']
+thumbnail: '/img/thumbnail-4.png'
+title: "Master’s students Information Science win international competition in Author Profiling"
+---
+
+Master’s students Information Science win international competition in Author Profiling
+13 July 2016
+Author Profiling is recognizing the demographics of who wrote a given text, such as age and gender. This is a problem of growing importance in language technology applications in forensics, security and marketing. For example, from a marketing perspective and on the basis of the analysis of blogs and online product reviews, companies may be interested in knowing whether it is more young or more old people who like their products.
+
+In order to stimulate research in the field of author profiling, the PAN forum organizes an annual international competition for universities and research centres, now in its fourth edition. You could compare this with the well-known RoboCup, but instead of a duel between intelligent robots, the PAN competition involves clever language technology systems. To make it as fair as possible, each participating system is given the same texts to analyse. The system with the most accurate predictions of the author characteristics is the winner.
+
+Over twenty groups participated this year in PAN, and the University of Groningen team, GronUP (Groningen User Profiling), achieved the best results for this task. This is an enormous achievement and shows that Groningen students can participate in state-of-the-art research at a high international level. In addition to international visibility, the young researchers from Groningen also won a modest monetary prize.
+
+The GronUP team consisted of three Master’s students of Information Science (Mart Busger Op Vollenbroek, Tim Kreutz and Chris Pool), two students of the European Master’s programme in Language and Communication Technologies , who are spending a year at the University of Groningen (Talvany Carlotto and Maria Medvedeva), and two PhD students from the CLCG (Johannes Bjerva and Hessel Haagsma). The team was led by university lecturer and computational linguist Dr Malvina Nissim.
+
+The idea to participate originated during the ‘Learning from Data’ Information Science Master’s course unit taught last autumn by Nissim, assisted by Haagsma and Bjerva. The winners of the competitionare invited to present their system at the PAN symposium, which will take place later this year in Portugal.
+
+For more information, please contact Malvina Nissim : m.nissim@rug.nl

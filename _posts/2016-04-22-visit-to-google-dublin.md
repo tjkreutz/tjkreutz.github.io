@@ -1,10 +1,10 @@
 ---
-layout: post
 thumbnail: '/img/thumbnail-3.png'
-title: "Visit to Google Dublin"
-keywords: ['google', 'choice', 'really', 'thing', 'study']
+keywords: ['google', 'choice', 'really', 'right', 'thing']
+layout: post
 date: 2016-04-22 18:00:00 +0100
 type: blog
+title: "Visit to Google Dublin"
 ---
 
 Whenever I discuss study programmes with fellow students it becomes apparent what a choice-obsessed society we really are. We believe that there is nothing more important than making the 'right' choice, which presupposes that the is a right choice to begin with. Typical catch-phrases include 'I really made the right choice', 'I have really found my place', or 'it wasn't a good fit', 'it turned out to not be my thing'. 
