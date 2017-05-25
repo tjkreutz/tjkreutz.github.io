@@ -2,7 +2,41 @@
 layout: default
 ---
 
-<h2>Posts</h2>
+<table>
+  <tr>
+    <td id="intro">
+      <h2>About me</h2>
+      <p>
+        I am a student at the University of Groningen, currently enrolled in the Information Science master programme.
+        My graduation thesis focuses on Natural Language Processing of legal texts. Specifically I use the
+        <a href="https://www.rechtspraak.nl/Uitspraken-en-nieuws/Uitspraken/Paginas/Open-Data.aspx">Open Data van de Rechtspraak</a>
+        data collections to predict applicable laws for court cases. I am scheduled to graduate in July under
+        <a href="http://www.rug.nl/staff/g.j.m.van.noord/">prof. dr. Gertjan van Noord</a>.
+      </p>
+      <p>
+        You can already have a look at my bachelor's thesis on news event detection on Twitter <a href="/nieuwstwiets">here</a>
+        as well as some <a href="/musicmood">goofier</a> projects and blog posts below.
+      </p>
+      <p>
+        Will try to update regularly.
+      </p>
+    </td>
+    <td><img class="avatar" src='{{ site.baseurl }}/img/tim.jpg'></td>
+    <td class="spacer"></td>
+  </tr>
+</table>
+
+<h2>Contact</h2>
+
+
+<img src="{{ site.baseurl}}/img/icon-email.png"> tjkreutz [ at ] gmail [ dot ] com
+<img src="{{ site.baseurl}}/img/icon-phone.png"> +316 16720341
+<a href="https://bitbucket.org/tjkreutz"><img src="{{ site.baseurl}}/img/icon-bitbucket.png">/tjkreutz</a>
+<a href="https://github.com/tjkreutz"><img src="{{ site.baseurl}}/img/icon-github.png">/tjkreutz</a>
+<a href="https://twitter.com/tjkreutz"><img src="{{ site.baseurl}}/img/icon-twitter.png">@tjkreutz</a>
+<a href="https://plus.google.com/+tjkreutz"><img src="{{ site.baseurl}}/img/icon-googleplus.png">tjkreutz</a>
+
+<h2>Recent</h2>
 
 <table>
   {% for post in site.posts %}
@@ -23,9 +57,9 @@ layout: default
     <td><span class="hierarchy">
   {% endif %}
   {{ post.date | date: "%-d" }}</span><b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></b>
-  <p class="post-meta">Last modified: {{ post.date | date_to_string }} | keywords: {{ post.keywords | array_to_sentence_string }}.</p></td>
-  <td><img class="thumbnail" src={{ post.thumbnail | prepend: site.baseurl}}></img></td>
+  <p class="post-meta">Last modified: {{ post.date | date_to_string }} | keywords: {{ post.keywords | default: "" | array_to_sentence_string }}.</p></td>
+  <td><img class="thumbnail" src={{ post.thumbnail | default: "/img/thumbnail-default.png" | prepend: site.baseurl }}></img></td>
   <td class="spacer"></td>
   </tr>
   {% endfor %}
-</div>
+</table>

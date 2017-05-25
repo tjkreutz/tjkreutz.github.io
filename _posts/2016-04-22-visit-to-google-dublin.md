@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Visit to Google Dublin"
-date: 2016-04-22 18:00:00 +0100
 thumbnail: '/img/thumbnail-3.png'
-keywords: ['right', 'choice', 'google', 'really', 'people']
+title: "Visit to Google Dublin"
+keywords: ['google', 'choice', 'really', 'thing', 'study']
+date: 2016-04-22 18:00:00 +0100
 type: blog
 ---
 
