@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnail-3.png'
-keywords: ['google', 'choice', 'really', 'right', 'thing']
+keywords: ['google', 'thing', 'incredibly', 'dublin', 'choice']
 layout: post
 date: 2016-04-22 18:00:00 +0100
 type: blog
