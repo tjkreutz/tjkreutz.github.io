@@ -1,7 +1,7 @@
 ---
 place: International Workshop on Social Media World Sensors (Sideways) Proceedings
 redirect: /files/KreutzNissim.pdf
-keywords: ['tweets', 'events', 'detection', 'event', '2015']
+keywords: ['tweets', 'events', 'event', 'detection', '2015']
 layout: redirect-internal
 date: 2016-09-13 21:03:33 +0100
 type: publication

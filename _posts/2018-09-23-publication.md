@@ -6,7 +6,7 @@ date: 2018-09-23
 type: publication
 authors: ['Tim Kreutz', 'Walter Daelemans']
 title: "Enhancing General Sentiment Lexicons for Domain-Specific Use"
-keywords: ['lexicon', 'polarity', 'domain', 'words', 'negative']
+keywords: ['lexicon', 'polarity', 'domain', 'words', 'shifts']
 ---
 
 Enhancing General Sentiment Lexicons for Domain-Specific Use
