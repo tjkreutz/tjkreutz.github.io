@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnail-5.png'
-keywords: ['article', 'https', 'www', 'websites', 'tijd']
+keywords: ['https', 'article', 'www', 'websites', 'tijd']
 layout: post
 date: 2020-05-01 00:00:00 +0100
 type: blog
