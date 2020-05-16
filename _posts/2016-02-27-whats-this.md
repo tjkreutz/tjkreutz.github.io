@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnail-1.png'
-keywords: ['tjkreutz', 'icon', 'bitbucket', 'png', 'baseurl']
+keywords: ['tjkreutz', 'icon', 'bitbucket', 'png', 'github']
 layout: post
 date: 2016-02-27 21:03:33 +0100
 type: blog

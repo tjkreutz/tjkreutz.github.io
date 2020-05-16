@@ -6,7 +6,7 @@ date: 2018-09-22
 type: publication
 authors: ['Tim Kreutz', 'Walter Daelemans']
 title: "Exploring classifier combinations for language variety identification"
-keywords: ['feature', 'netherlandic', 'flemish', 'dutch', 'varieties']
+keywords: ['feature', 'dutch', 'netherlandic', 'flemish', 'varieties']
 ---
 
 Exploring Classifier Combinations for Language Variety Identification

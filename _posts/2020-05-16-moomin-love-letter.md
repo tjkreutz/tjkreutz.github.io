@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnail-6.png'
-keywords: ['card', 'cards', 'player', 'discard', 'deck']
+keywords: ['card', 'cards', 'player', 'game', 'moomin']
 layout: post
 date: 2020-05-16 10:00:00 +0100
 type: blog
@@ -18,14 +18,14 @@ The cards were nicely printed by [Cartamundi](https://www.makemygame.com/). 10 d
 
 Here are the 10 cards:
 
-| No. | Frequency | Rule |
-|  1  | 2 | Copy the action of the card that you discard Stinky on. |
-|  2  | 6 | Choose another player and guess their hand (not Sniff). If your guess is right the player is out of the round.  |
-|  3  | 2 | Look at another player's hand. |
-|  4  | 2 | You and another play secretly compare hands. The player with the lower value is out of the round. |
-|  5  | 2 | Until your next turn, ignore all effects from other players' cards.|
-|  6  | 2 | Choose any player (including yourself) to discard their hand and draw a new card. |
-|  7  | 2 | Draw a card. Choose one card and put the other on the bottom of the draw deck. |
-|  8  | 1 | Trade hands with another player of your choice. |
-|  9  | 1 | If you have this card and Moominpappa or Snufkin in your hand, you must discard this card. |
-|  10 | 1 | If you discard this card, you are out of the round. |
+| No. | Name | Frequency | Rule |
+|  1  | Stinky | 2 | Copy the action of the card that you discard Stinky on. |
+|  2  | Sniff | 6 | Choose another player and guess their hand (not Sniff). If your guess is right the player is out of the round.  |
+|  3  | Snork | 2 | Look at another player's hand. |
+|  4  | Little My | 2 | You and another play secretly compare hands. The player with the lower value is out of the round. |
+|  5  | Snorkmaiden | 2 | Until your next turn, ignore all effects from other players' cards.|
+|  6  | Snufkin | 2 | Choose any player (including yourself) to discard their hand and draw a new card. |
+|  7  | Mr. Hemulen | 2 | Draw a card. Choose one card and put the other on the bottom of the draw deck. |
+|  8  | Moominpappa | 1 | Trade hands with another player of your choice. |
+|  9  | Moominmamma | 1 | If you have this card and Moominpappa or Snufkin in your hand, you must discard this card. |
+|  10 | Moomin | 1 | If you discard this card, you are out of the round. |
