@@ -3,3 +3,4 @@ _config.yml
 .idea/
 .sass-cache/
 scripts/__pycache__/
+.jekyll-cache/
