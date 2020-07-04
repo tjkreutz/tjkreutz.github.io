@@ -1,7 +1,7 @@
 ---
 place: Bachelor thesis at University of Groningen
 redirect: /files/Kreutz-0.pdf
-keywords: ['tweets', 'news', 'article', 'relevant', 'articles']
+keywords: ['news', 'tweets', 'article', 'relevant', 'articles']
 layout: redirect-internal
 date: 2015-06-15 21:03:33 +0100
 type: publication
