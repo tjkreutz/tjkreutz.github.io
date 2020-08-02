@@ -3,9 +3,9 @@ import posts
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-def main(directory):
-
-    allposts = posts.read_posts(directory)
+def main(filenames):
+    filenames = [filename for filename in filenames if filename.endswith(('md', 'markdown'))]
+    allposts = [posts.read_post(filename) for filename in filenames]
     alltexts = [post.get_text() for post in allposts]
     
     vec = TfidfVectorizer(stop_words='english')
@@ -19,11 +19,11 @@ def main(directory):
         topfive = sortedwords[:5]
         curpost = allposts[postid]
         curpost.add_meta(['keywords'] + topfive)
-        curpost.write(directory + '/' + curpost.filename)
+        curpost.write(filenames[postid])
         postid += 1
         
 if __name__ == '__main__':
-    if not len(sys.argv) == 2:
-        print('Error: wrong number of arguments. Usage: ./keywords.py <_POSTS DIR>')
+    if len(sys.argv) < 2:
+        print('Error: wrong number of arguments. Usage: ./keywords.py <LIST OF POSTS>')
     else:
-        main(sys.argv[1])
+        main(sys.argv[1:])
