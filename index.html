@@ -46,7 +46,7 @@ layout: default
   {% endif %}
   {{ post.date | date: "%-d" }}</span><b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></b>
   <p class="post-meta">Last modified: {{ post.date | date_to_string }} | keywords: {{ post.keywords | default: "" | array_to_sentence_string }}.</p></td>
-  <td><img class="thumbnail" src={{ post.thumbnail | default: "/img/thumbnail-default.png" | prepend: site.baseurl }}></img></td>
+  <td><img class="thumbnail" src={{ post.thumbnail | default: "/img/thumbnails/thumbnail-default.png" | prepend: site.baseurl }}></img></td>
   <td class="spacer"></td>
   </tr>
   {% endfor %}

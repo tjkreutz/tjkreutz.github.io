@@ -6,7 +6,7 @@ layout: redirect-external
 date: 2016-07-13 21:03:33 +0100
 type: publication
 authors: ['University of Groningen']
-thumbnail: '/img/thumbnail-4.png'
+thumbnail: '/img/thumbnails/thumbnail-4.png'
 title: "Master’s students Information Science win international competition in Author Profiling"
 ---
 

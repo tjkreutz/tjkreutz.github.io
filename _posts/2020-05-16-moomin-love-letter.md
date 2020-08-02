@@ -1,5 +1,5 @@
 ---
-thumbnail: '/img/thumbnail-6.png'
+thumbnail: '/img/thumbnails/thumbnail-6.png'
 keywords: ['card', 'cards', 'player', 'moomin', 'discard']
 layout: post
 date: 2020-05-16 10:00:00 +0100
