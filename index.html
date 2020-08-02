@@ -27,6 +27,7 @@ layout: default
 
 <table>
   {% for post in site.posts %}
+  {% if post.type != "plog" %}
   <tr>
   {% assign currentyear = post.date | date: "%Y" %}
   {% assign currentmonth = post.date | date: "%b" %}
