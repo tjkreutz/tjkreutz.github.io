@@ -8,9 +8,9 @@ layout: default
   {% for post in site.posts %}
   {% if post.type == "plog" %}
   <tr>
-    <td class="spacer">{{ post.location }} - </td>
     <td><b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: '%B %d, %Y' }}</a></b></td>
-    <td><img class="thumbnail" src={{ post.thumbnail | default: "/img/thumbnails/thumbnail-default.png" | prepend: site.baseurl }}></img></td>
+    <td class="spacer">{{ post.location }}</td>
+    <td class="spacer">{{ post.pictures }} pictures</td>
   </tr>
   {% endif %}
   {% endfor %}
