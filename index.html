@@ -49,5 +49,6 @@ layout: default
   <td><img class="thumbnail" src={{ post.thumbnail | default: "/img/thumbnails/thumbnail-default.png" | prepend: site.baseurl }}></img></td>
   <td class="spacer"></td>
   </tr>
+  {% endif %}
   {% endfor %}
 </table>
