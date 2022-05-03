@@ -6,7 +6,7 @@ date: 2018-08-20
 type: publication
 authors: ['Stiene Praet', 'Walter Daelemans', 'Tim Kreutz', 'Peter van Aelst', 'Stefaan Walgrave', 'David Martens']
 title: "Issue communication by political parties on Twitter"
-keywords: ['party', 'topics', 'parties', 'communication', 'political']
+keywords: ['topics', 'party', 'parties', 'communication', 'political']
 ---
 
 Issue Communication by Political Parties on Twitter

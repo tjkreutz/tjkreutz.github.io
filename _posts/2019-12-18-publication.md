@@ -1,12 +1,12 @@
 ---
 place: Computational Linguistics in the Netherlands (CLIN) Journal 9
-redirect: /files/KreutzDaelemans-3.pdf
+redirect: /files/KreutzDaelemans-2.pdf
 layout: redirect-internal
 date: 2019-12-18
 type: publication
 authors: ['Tim Kreutz', 'Walter Daelemans']
 title: "How to optimize your Twitter collection"
-keywords: ['tweets', 'twitter', 'keywords', 'recall', 'api']
+keywords: ['twitter', 'tweets', 'keywords', 'recall', 'api']
 ---
 
 Tim Kreutz tim.kreutz@uantwerpen.be

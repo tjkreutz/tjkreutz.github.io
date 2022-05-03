@@ -1,7 +1,7 @@
 ---
 place: http://www.rug.nl/
 redirect: http://www.rug.nl/let/organization/actueel/nieuwsberichten-2016/2016-07-13-students-information-science-win-competition?lang=en
-keywords: ['students', 'pan', 'groningen', 'master', 'profiling']
+keywords: ['students', 'pan', 'groningen', 'master', 'nissim']
 layout: redirect-external
 date: 2016-07-13 21:03:33 +0100
 type: publication

@@ -6,7 +6,7 @@ date: 2017-09-13
 type: publication
 authors: ['Tim Kreutz']
 title: "Predicting Applicable Laws for Court Cases"
-keywords: ['court', 'cases', 'laws', 'law', 'label']
+keywords: ['court', 'cases', 'laws', 'law', 'data']
 ---
 
 Predicting Applicable Laws for Court Cases
