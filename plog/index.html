@@ -5,13 +5,10 @@ layout: default
 <h2>Plog</h2>
 
 <table>
-  {% for post in site.posts %}
-  {% if post.type == "plog" %}
+  {% for plog in site.plog %}
   <tr>
-    <td><b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: '%B %d, %Y' }}</a></b></td>
-    <td class="spacer">{{ post.location }}</td>
-    <td class="spacer">{{ post.pictures }} pictures</td>
+    <td><b><a href="{{ plog.url | prepend: site.baseurl }}">{{ plog.date | date: '%B %d, %Y' }}</a></b></td>
+    <td class="spacer">{{ plog.pictures }} pictures</td>
   </tr>
-  {% endif %}
   {% endfor %}
 </table>

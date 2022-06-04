@@ -19,3 +19,12 @@ github_username:  tjkreutz
 highlighter: rouge
 markdown: kramdown
 permalink: pretty
+
+# Collections
+collections:
+  blog:
+    output: true
+  plog:
+    output: true
+  publications:
+    output: true

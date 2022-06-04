@@ -5,14 +5,21 @@ layout: default
 <h2>Publications</h2>
 
 <table>
-  {% for post in site.posts %}
-  {% if post.type == "publication" %}
+  {% for publication in site.publications %}
   <tr>
-    <td>
-      <b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.authors | array_to_sentence_string }} ({{ post.date | date: '%Y' }}).</a></b>
-      <p>{{ post.title }}. <span class="post-meta">{{ post.place }}. Keywords: {{ post.keywords | default: "" | array_to_sentence_string }}.</span></p>
+    {% assign currentyear = publication.date | date: "%Y" %}
+    {% assign currentmonth = publication.date | date: "%b" %}
+    {% if currentyear != year %}
+      {% assign year = currentyear %}
+      <td valign="baseline"><h1 class="year">{{ currentyear }}</h1></td>
+      {% else %}
+      <td class="hierarchy"></td>
+    {% endif %}
+    <td valign="baseline">
+      <span class="hierarchy">{{ currentmonth }} {{ publication.date | date: "%-d" }}</span>
+      <b><a href="{{ publication.url | prepend: site.baseurl }}">{{ publication.title }}.</a></b>
+      <p>{{ publication.authors | array_to_sentence_string }} ({{ publication.date | date: '%Y' }}).<p> <p class="post-meta">{{ publication.place }}.</p>
     </td>
   </tr>
-  {% endif %}
   {% endfor %}
 </table>

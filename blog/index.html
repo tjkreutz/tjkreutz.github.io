@@ -5,29 +5,21 @@ layout: default
 <h2>Blog</h2>
 
 <table>
-  {% for post in site.posts %}
-  {% if post.type == "blog" %}
+  {% for post in site.blog %}
   <tr>
   {% assign currentyear = post.date | date: "%Y" %}
   {% assign currentmonth = post.date | date: "%b" %}
   {% if currentyear != year %}
     {% assign year = currentyear %}
-    {% assign month = "1990" %}
     <td valign="baseline"><h1 class="year">{{ currentyear }}</h1></td>
     {% else %}
     <td class="hierarchy"></td>
   {% endif %}
-  {% if currentmonth != month %}
-    {% assign month = currentmonth %}
-    <td valign="baseline"><span class="hierarchy">{{ currentmonth }}
-    {% else %}
-    <td><span class="hierarchy">
-  {% endif %}
+  <td valign="baseline"><span class="hierarchy">{{ currentmonth }}
   {{ post.date | date: "%-d" }}</span><b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></b>
   <p class="post-meta">Last modified: {{ post.date | date_to_string }} | keywords: {{ post.keywords | array_to_sentence_string }}.</p></td>
   <td><img class="thumbnail" src={{ post.thumbnail | prepend: site.baseurl}}></img></td>
   <td class="spacer"></td>
   </tr>
-  {% endif %}
   {% endfor %}
 </table>

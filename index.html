@@ -16,7 +16,6 @@ layout: default
 
 <h2>Contact</h2>
 
-
 <img src="{{ site.baseurl}}/img/icon-email.png"> tjkreutz [ at ] gmail [ dot ] com
 <img src="{{ site.baseurl}}/img/icon-phone.png"> +316 16720341
 <a href="https://bitbucket.org/tjkreutz"><img src="{{ site.baseurl}}/img/icon-bitbucket.png">/tjkreutz</a>
@@ -26,8 +25,7 @@ layout: default
 <h2>Recent</h2>
 
 <table>
-  {% for post in site.posts %}
-  {% if post.type != "plog" %}
+  {% for post in site.blog %}
   <tr>
   {% assign currentyear = post.date | date: "%Y" %}
   {% assign currentmonth = post.date | date: "%b" %}
@@ -38,17 +36,11 @@ layout: default
     {% else %}
     <td class="hierarchy"></td>
   {% endif %}
-  {% if currentmonth != month %}
-    {% assign month = currentmonth %}
-    <td valign="baseline"><span class="hierarchy">{{ currentmonth }}
-    {% else %}
-    <td><span class="hierarchy">
-  {% endif %}
+  <td valign="baseline"><span class="hierarchy">{{ currentmonth }}
   {{ post.date | date: "%-d" }}</span><b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></b>
   <p class="post-meta">Last modified: {{ post.date | date_to_string }} | keywords: {{ post.keywords | default: "" | array_to_sentence_string }}.</p></td>
   <td><img class="thumbnail" src={{ post.thumbnail | default: "/img/thumbnails/thumbnail-default.png" | prepend: site.baseurl }}></img></td>
   <td class="spacer"></td>
   </tr>
-  {% endif %}
   {% endfor %}
 </table>
