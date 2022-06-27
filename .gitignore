@@ -4,3 +4,4 @@ _config.yml
 .sass-cache/
 scripts/__pycache__/
 .jekyll-cache/
+.ipynb_checkpoints
