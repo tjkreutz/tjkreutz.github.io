@@ -1,65 +1,86 @@
 import os
-import sys
-from PIL import Image
-from posts import Post
+import requests
+import datetime
+from httplib2 import Http
+from googleapiclient.discovery import build
+from oauth2client import file, client, tools
 
-class Plog(Post):
-    def __init__(self, meta, images):
-        super(Plog, self).__init__(meta)
-        self.images = images
+def get_window(days=1):
+    now = datetime.datetime.now()
+    five = now.replace(hour=5, minute=0, second=0, microsecond=0)
+    if now.hour > 19: # window is today
+        start = five
+        end = now
+    else: # window is yesterday
+        start = five - datetime.timedelta(days=days)
+        end = five
+    return start, end
 
-    def write(self, filepath):
-        super(Plog, self).write(filepath)
-        filehandle = open(filepath, 'a')
-        for image in self.images:
+def connect():
+    scope = 'https://www.googleapis.com/auth/photoslibrary.readonly'
+    store = file.Storage('plog.json')
+    creds = store.get()
+    if not creds or creds.invalid:
+        flow = client.flow_from_clientsecrets('client_secret.json', scope)
+        creds = tools.run_flow(flow, store)
+    api = build('photoslibrary', 'v1', http=creds.authorize(Http()), static_discovery=False)
+    return api
 
-            image.show()
-            comment = input("Comment: ")
+def download_file(url, outfile):
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(outfile, 'wb') as f:
+            f.write(response.content)
+            f.close()
 
-            filehandle.write(image_md(image))
-            filehandle.write("\n\n")
-            filehandle.write(comment_md(comment))
-            filehandle.write("\n\n")
+def main():
+    start, end = get_window()
+    title = start.strftime("%Y-%m-%d")
+    api = connect()
+    media_items = api.mediaItems()
+    query = media_items.search(body={
+        "pageSize": 20,
+        "filters": {
+            "mediaTypeFilter": {"mediaTypes": ["PHOTO"]},
+        }
+    })
+    
+    results = query.execute()
+    hits = []
+    if results:
+        for result in results['mediaItems']:
+            # filter outside window
+            creation_time =  result['mediaMetadata']['creationTime']
+            creation_datetime = datetime.datetime.strptime(creation_time, '%Y-%m-%dT%H:%M:%SZ')
+            
+            if start < creation_datetime < end:
+                hits.append(result)
+    
+    if hits:
+        with open(f"_plog/{title}.md", "w") as outfile:
+            
+            outfile.write("---\n")
+            outfile.write("layout: plog\n")
+            outfile.write(f'title: "{title}"\n')
+            outfile.write(f'date: {title}\n')
+            outfile.write(f'pictures: {str(len(hits))}\n')
+            outfile.write("exclude: true\n")
+            outfile.write("---\n\n")
+                   
+            outfile.write(f"# {title}\n\n")
+            
+            for i, hit in enumerate(hits):
 
-def image_md(image):
-    html = '![img]({{ "/' + image.filename + '" | prepend: site.baseurl }})'
-    return html
-
-def comment_md(comment):
-    html = comment
-    return html
-
-def plog_from_directory(directory):
-    title = os.path.basename(os.path.normpath(directory))
-
-    images = []
-    extensions = [".jpg", ".jpeg"]
-    for filename in os.listdir(directory):
-        extension = os.path.splitext(filename)[-1].lower()
-        if extension in extensions:
-            image = process_image(os.path.join(directory, filename))
-            images.append(image)
-
-    meta = {"title": title, "date": title, "type": "plog", "layout": "plog", "pictures": str(len(images))}
-    plog = Plog(meta, images)
-    return plog
-
-def process_image(filepath):
-    image = Image.open(filepath)
-    # resize
-    if image.width > 400:
-        factor = 400 / image.width
-        image = image.resize((int(image.width * factor), int(image.height * factor)))
-
-    image.save(filepath)
-    return image
-
-def main(directory, outfile):
-    plog = plog_from_directory(directory)
-    plog.write(outfile)
-
-if __name__ == '__main__':
-    if not len(sys.argv) == 3:
-        print('Error: wrong number of arguments. Usage: ./plog.py <IMAGE DIR> <PLOG FILE>')
-    else:
-        main(sys.argv[1], sys.argv[2])
+                path = os.path.join("img/", hit['filename'])
+                download_file(hit['baseUrl'], os.path.join("img/", hit['filename']))
+                
+                outfile.write("---\n\n")
+                
+                outfile.write('<img class="plog-picture" src="{{{{ site.baseurl }}}}/{0}" alt="picture {1}" />\n\n'.format(path, str(i+1)))
+                
+                # temporary solution. How to get MediaItem Description?
+                hit['description'] = input(f"Describe picture {str(i+1)}:\n")
+                outfile.write(f"{hit['description']}\n\n")
+                                    
+                
+main()
