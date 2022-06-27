@@ -7,8 +7,9 @@ layout: default
 <table>
   {% for plog in site.plog %}
   <tr>
-    <td><b><a href="{{ plog.url | prepend: site.baseurl }}">{{ plog.date | date: '%B %d, %Y' }}</a></b></td>
-    <td class="spacer">{{ plog.pictures }} pictures</td>
+    <td><b><a href="{{ plog.url | prepend: site.baseurl }}">{{ plog.date | date: '%B %d, %Y' }}</a></b>
+      <p class="post-meta">{{ plog.location }} | {{ plog.pictures }} pictures</p>
+    </td>
   </tr>
   {% endfor %}
 </table>
