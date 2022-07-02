@@ -8,23 +8,12 @@
   </head>
   <body>
     <textarea id="source">
-class: middle, center
-layout: true
----
 {% include_relative {{page.path | replace: "_plog/", ""}} %} 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
     </script>
     <script type="text/javascript">
-      var slideshow = remark.create({
-          slideNumberFormat: function (current, total) {
-              if (current > 1) {
-                  return String(current-1) + " / " + String(total-1);
-              } else {
-                  return ""
-              }
-          }
-      });
+      var slideshow = remark.create();
     </script>
   </body>
 </html>
