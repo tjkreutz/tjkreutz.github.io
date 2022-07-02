@@ -56,6 +56,7 @@ def main():
             if start < creation_datetime < end:
                 hits.append(result)
     
+    hits.reverse()
     if hits:
         with open(f"_plog/{title}.md", "w") as outfile:
             
