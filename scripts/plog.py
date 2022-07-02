@@ -67,8 +67,8 @@ def main():
             outfile.write(f'pictures: {str(len(hits))}\n')
             outfile.write("exclude: true\n")
             outfile.write("---\n\n")
-                   
-            outfile.write(f"# {title}\n\n")
+            outfile.write("class: middle, center\n")
+            outfile.write("layout: true\n\n")
             
             for i, hit in enumerate(hits):
 
@@ -76,6 +76,8 @@ def main():
                 download_file(hit['baseUrl'], os.path.join("img/", hit['filename']))
                 
                 outfile.write("---\n\n")
+                
+                outfile.write("class: middle, center\n\n")
                 
                 outfile.write('<img class="plog-picture" src="{{{{ site.baseurl }}}}/{0}" alt="picture {1}" />\n\n'.format(path, str(i+1)))
                 
