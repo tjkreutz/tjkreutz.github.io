@@ -39,7 +39,7 @@ def main():
     api = connect()
     media_items = api.mediaItems()
     query = media_items.search(body={
-        "pageSize": 20,
+        "pageSize": 30,
         "filters": {
             "mediaTypeFilter": {"mediaTypes": ["PHOTO"]},
         }
