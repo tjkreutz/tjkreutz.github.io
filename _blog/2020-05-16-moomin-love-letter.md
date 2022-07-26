@@ -13,7 +13,7 @@ There are several changes to the [rules of the original](https://www.ultraboardg
 The cards were nicely printed by [Cartamundi](https://www.makemygame.com/). 10 decks were made, consisted of the 21 playing cards, 5 overview cards and a rule card. Since the total comes to just 27 cards, ordering a normal deck of 54 cards allowed two full games to be printed, reducing the costs per deck.
 
 |  |  |
-| ![photo1]({{ "/img/IMG_20200428_151240.jpg" | prepend: site.baseurl }}){:height="400px"} | ![photo2]({{ "/img/IMG_20200428_150950.jpg" | prepend: site.baseurl }}){:height="400px"} |
+| ![photo1]({{ "/img/moomin1.jpg" | prepend: site.baseurl }}){:height="400px"} | ![photo2]({{ "/img/moomin2.jpg" | prepend: site.baseurl }}){:height="400px"} |
 
 Here are the 10 cards:
 
