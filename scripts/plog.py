@@ -50,7 +50,7 @@ def write_picture(outfile, path):
     outfile.write('<img class="plog-picture" src="{{{{ site.baseurl }}}}/{0}" />\n\n'.format(path))
     
 def write_description(outfile, description):
-    outfile.write(f"{result['description']}\n\n")
+    outfile.write(f"{description}\n\n")
 
 def main():
     start, end = get_window()
@@ -77,12 +77,13 @@ def main():
 
             description = hit['description']
             directory = os.path.join(f"img/plog/{title}")
-            extension = result['filename'].split(".")[-1]
+            extension = hit['filename'].split(".")[-1]
             path = os.path.join(f"{directory}/{istr}.{extension}")
 
-            os.mkdir(directory)
+            if not os.path.exists(directory):
+                os.mkdir(directory)
 
-            download_file(result['baseUrl'], path)
+            download_file(hit['baseUrl'], path)
 
             write_picture(outfile, path)
             write_description(outfile, description)
