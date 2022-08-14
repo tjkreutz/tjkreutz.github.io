@@ -6,10 +6,21 @@ layout: default
 
 <table>
   {% for plog in site.plog %}
-  <tr>
-    <td><b><a href="{{ plog.url | prepend: site.baseurl }}">{{ plog.date | date: '%B %d, %Y' }}</a></b>
-      <p class="post-meta">{{ plog.pictures }} pictures</p>
-    </td>
-  </tr>
+  {% assign currentyear = plog.date | date: "%Y" %}
+  {% assign currentmonth = plog.date | date: "%b" %}
+  {% if currentyear != year %}
+    {% assign year = currentyear %}
+    <tr>
+    <td valign="baseline"><h1 class="year">{{ currentyear }}</h1></td>
+    </tr>
+  {% endif %}
+  {% if currentmonth != month %}
+    {% assign month = currentmonth %}
+    <tr>
+    <td valign="baseline">{{ currentmonth }}</td><td valign="baseline">
+  {% endif %}
+        <b><a href="{{ plog.url | prepend: site.baseurl }}">{{ plog.date | date: '%d' }}</a></b>
   {% endfor %}
+    </td>
+    </tr>
 </table>
