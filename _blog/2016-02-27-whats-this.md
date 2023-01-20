@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnails/thumbnail-1.png'
-keywords: ['icon', 'tjkreutz', 'bitbucket', 'png', 'baseurl']
+keywords: ['twitter', 'tjkreutz', 'icon', 'github', 'case']
 layout: post
 date: 2016-02-27 21:03:33 +0100
 title: "What's this?"

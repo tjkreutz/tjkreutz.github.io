@@ -10,7 +10,7 @@ def main(filenames):
     
     vec = TfidfVectorizer(stop_words='english')
     tfidf = vec.fit_transform(alltexts)
-    features = vec.get_feature_names()
+    features = vec.get_feature_names_out()
     postid = 0
     
     for doc in tfidf:
