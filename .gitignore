@@ -1,7 +1,10 @@
-# Created by .ignore support plugin (hsz.mobi)
 _config.yml
 .idea/
 .sass-cache/
 scripts/__pycache__/
 .jekyll-cache/
 .ipynb_checkpoints
+.DS_Store
+client_secret.json
+plog.json
+.venv
