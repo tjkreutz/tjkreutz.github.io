@@ -6,12 +6,12 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Tim Kreutz - blog
+title: tjkreutz
 email: tjkreutz@gmail.com
 baseurl: ""
 keep_files: []
 destination: ../www
-url: "http://www.timkreutz.nl" # the base hostname & protocol for your site
+url: "https://tjkreutz.github.io" # the base hostname & protocol for your site
 twitter_username: tjkreutz
 github_username:  tjkreutz
 
