@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <title>{{ page.title }}</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+      }
+   </script>
+  </head>
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        <table width="100%">
+          <tr>
+            <td>
+              <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="post-meta">{{ page.totalTime | replace: "PT", "" | replace: "1H", "1 hour " | replace: "H", " hours " | replace: "M", " minutes" }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="post-meta">{{ page.description }}</p>
+            </td>
+          </tr>
+
+        </table>
+
+        <div class="post-content" itemprop="articleBody">
+          <div itemprop="recipeIngredient">
+            <h4>Ingredients</h4>
+             <ul>
+                {% for ingredient in page.recipeIngredient %}
+                <li class="post-list" itemprop="ingredients">{{ ingredient[1] }} {{ ingredient[0] }}</li>
+                {% endfor %}
+             </ul>
+          </div>
+          <p></p>
+          <div itemprop="recipeInstruction">
+            <h4>Instructions</h4>
+            <ol>
+              <li class="post-list">{{ page.recipeInstruction | join: '</li> <li class="post-list">' }}</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
