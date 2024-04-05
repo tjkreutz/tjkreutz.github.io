@@ -4,7 +4,7 @@ name: Sesame Udon Noodles with Pork
 layout: recipe
 totalTime: PT20M
 recipeYield: 2
-description: You don't like spice, but I hope you're not allergic, because a little bit of chili is the best in this Chinese meal. The newest one I learnt and I am still perfecting it so let me know if you improved anything about it 😗
+description: A little bit of chili is the best in this Chinese meal.
 recipeIngredient:
   pre-cooked udon noodles: 400g
   minced pork: 400g

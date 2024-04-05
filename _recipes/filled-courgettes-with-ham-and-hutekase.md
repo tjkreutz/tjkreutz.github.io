@@ -4,7 +4,7 @@ name: Filled Courgettes with Hame and Hüttenkäse
 layout: recipe
 totalTime: PT40M
 recipeYield: 2
-description: What if flammkuchen was a vegetable? 🤔 I am sure that with the many toppings you have already tried on the dough, you can also experiment with this recipe. It's great how it can vary from very healthy (not a lot of cheese on top) to guilty pleasure (moooore cheese). And it mixes Dutch with German.
+description: Having a half courgette like this is usually enough for a light shared meal.
 recipeIngredient:
   courgettes: 2
   yellow onion: 1

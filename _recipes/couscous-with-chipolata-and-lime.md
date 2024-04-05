@@ -4,7 +4,7 @@ name: Couscous with Chipolata and Lime
 layout: recipe
 totalTime: PT40M
 recipeYield: 2
-description: This is where it all started 😊 I love cooking and I love how appreciative you are. It's what inspired this gift. To my mind this is an activity that we have to explore and explore and a very good base for everything I like about you. Cooking for you is a pleasure, and eating together is just a good life 💕
+description: Light and summery. Replace chipolata with (a highly spiced) aubergine for a veggie variant.
 recipeIngredient:
   couscous: 300g
   chipolata or minced beef: 200g

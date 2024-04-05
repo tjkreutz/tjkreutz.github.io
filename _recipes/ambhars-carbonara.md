@@ -4,7 +4,7 @@ name: Ambhar's Carbonara
 layout: recipe
 totalTime: PT20M
 recipeYield: 2
-description: Ambhar is Ward's friend from Italy. I don't really like him but he made me the best carbonara I ever had 😇
+description: Simple but made right.
 recipeIngredient: 
   spaghetti, linguine or tagliatelle: 300g
   pancetta or similar: 100g

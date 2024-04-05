@@ -4,7 +4,7 @@ name: Mushroom Risotto from the Oven
 layout: recipe
 totalTime: PT1H
 recipeYield: 2
-description: Autumn = Cande's birthday 🥳 Autumn is sometimes rain and not wanting to leave the house. Autumn is mushroom season too. The flavors are so goood. 
+description: Autumn is sometimes rain and not wanting to leave the house. Autumn is mushroom season too. The flavors are so good. 
 recipeIngredient:
   risotto: 250g
   chestnut mushrooms: 200g

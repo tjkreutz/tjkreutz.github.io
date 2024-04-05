@@ -4,7 +4,7 @@ name: Ansjovis and Samphire Spaghetti
 layout: recipe
 totalTime: PT40M
 recipeYield: 2
-description: I hope you can get samphire somewhere in Bonn. We looked for it in the supermarket but it's really a coastal thing (Netherland and England). This is the sexiest recipe I know 😏
+description: This is the sexiest recipe I know 😏
 recipeIngredient:
   spaghetti: 300g
   extra virgin olive oil: 50ml

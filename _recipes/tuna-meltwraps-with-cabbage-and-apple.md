@@ -4,7 +4,7 @@ name: Tuna Meltwraps with Cabbage and Apple
 layout: recipe
 totalTime: PT30M
 recipeYield: 2
-description: I want to make this for you so bad! It always gives me a smile. But it is kind of a guilty pleasure and I don't think it is so healthy (though the cabbage is), so maybe once per year? Summer is a good time for it. 
+description: Kind of a guilty pleasure meal and I don't think it is so healthy (though the cabbage is), so maybe once per year? Summer is a good time for it. 
 recipeIngredient:
   canned tuna in oil: 1 (about 160g)
   whole grain wraps: 4 (or 6 when smaller)
