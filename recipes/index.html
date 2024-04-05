@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<h2>Recipes</h2>
+
+<table>
+  {% for recipe in site.recipes %}
+        <p><a href="{{ recipe.url | prepend: site.baseurl }}">{{ recipe.name }}</a> | serves {{ recipe.recipeYield }} | {{ recipe.totalTime | replace: "PT", "" | replace: "1H", "1 hour " | replace: "H", " hours " | replace: "M", " minutes" }}</p>
+  {% endfor %}
+    </td>
+    </tr>
+</table>
