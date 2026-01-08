@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnails/thumbnail-5.png'
-keywords: ['article', 'www', 'https', 'websites', 'data']
+keywords: ['article', 'www', 'https', 'websites', 'paper']
 layout: post
 date: 2020-05-01 00:00:00 +0100
 title: "Collecting News Data"
