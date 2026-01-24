@@ -5,6 +5,4 @@ scripts/__pycache__/
 .jekyll-cache/
 .ipynb_checkpoints
 .DS_Store
-client_secret.json
-plog.json
 .venv
