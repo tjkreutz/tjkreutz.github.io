@@ -23,3 +23,4 @@ six==1.16.0
 threadpoolctl==3.1.0
 uritemplate==4.1.1
 urllib3==1.26.18
+pillow==12.1.0

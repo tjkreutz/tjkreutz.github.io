@@ -1,75 +1,102 @@
+import datetime
+import json
 import os
 import sys
-import datetime
-import zipfile
 from pathlib import Path
-            
+from shutil import copy
+
+from PIL import Image
+
+
 def write_header(outfile, title):
     outfile.write("---\n")
     outfile.write("layout: plog\n")
     outfile.write(f'title: "{title}"\n')
-    outfile.write(f'date: {title}\n')
+    outfile.write(f"date: {title}\n")
     outfile.write("exclude: true\n")
     outfile.write("---\n\n")
     outfile.write("class: middle, center\n")
     outfile.write("layout: true\n\n")
-    
+
+
 def write_picture(outfile, path):
     outfile.write("---\n\n")
     outfile.write("class: middle, center\n\n")
-    outfile.write('<img class="plog-picture" src="{{{{ site.baseurl }}}}/{0}" />\n\n'.format(path))
-    
+    outfile.write(
+        '<img class="plog-picture" src="{{{{ site.baseurl }}}}/{0}" />\n\n'.format(path)
+    )
+
+
 def write_description(outfile, description):
     outfile.write(f"{description}\n\n")
 
-def extract_date_from_filename(filename):
-    try:
-        _, rawdate, _ = filename.split('_')
-        return datetime.datetime.strptime(rawdate, "%Y%m%d").strftime("%Y-%m-%d")
-    except ValueError:
-        return None
 
-def extract_dates_from_namelist(namelist):
-    dates = set()
-    for filename in namelist:
-        if date := extract_date_from_filename(filename):
-            dates.add(date)
-    return dates
+def get_takeout_metadata(date: datetime.date, source_directory: Path) -> list[Path]:
+    takeout_metadata = []
 
-def process_zip_file(zip_path):
-    zip_ref = zipfile.ZipFile(zip_path, 'r')
-    namelist = zip_ref.namelist()
-    dates = extract_dates_from_namelist(namelist)
+    for file in source_directory.iterdir():
+        if file.suffix.lower() != ".json":
+            continue
 
-    if len(dates) != 1:
-        print(f"Error: multiple dates found in {zip_path}: {dates}")
+        with open(file, "r") as f:
+            metadata = json.load(f)
+
+        taken_time = datetime.datetime.fromtimestamp(
+            float(metadata["photoTakenTime"]["timestamp"]), tz=datetime.timezone.utc
+        )
+
+        if taken_time.date() == date.date():
+            takeout_metadata.append((taken_time, metadata))
+
+    return [path for _, path in sorted(takeout_metadata)]
+
+
+def save_image(source_path: Path, destination_path: Path) -> None:
+    ext = source_path.suffix.lower()
+
+    if ext == ".gif":
+        copy(source_path, destination_path)
         return
 
-    title = dates.pop()
-    directory = Path(f"img/plog/{title}")
-    directory.mkdir(parents=True, exist_ok=True)
-        
-    zip_ref.extractall(directory)
+    with Image.open(source_path) as img:
+        if ext in {".jpg", ".jpeg"}:
+            img = img.convert("RGB")
+        img.thumbnail((512, 512), Image.LANCZOS)
+        img.save(destination_path)
+
+
+def main(datestring):
+    title = datestring
+    date = datetime.datetime.strptime(datestring, "%Y-%m-%d")
+    source_directory = Path(f"Takeout/Google Photos/Photos from {date.year}")
+    takeout_metadata = get_takeout_metadata(date, source_directory)
+
+    if not takeout_metadata:
+        print(f"No plog pictures found for {title}. Exiting.")
+        exit(0)
+
+    target_directory = Path(f"img/plog/{title}")
+    target_directory.mkdir(parents=True, exist_ok=True)
 
     with open(f"_plog/{title}.md", "w") as outfile:
         write_header(outfile, title)
-        
-        for i, file in enumerate(os.listdir(directory), start=1):
-            _, ext = os.path.splitext(file.lower())
-                
+
+        for i, metadata in enumerate(takeout_metadata, start=1):
+            filename = metadata["title"]
+            description = metadata["description"]
+
             istr = f"{i:02}"
-            source_path = directory / file
-            destination_path = directory / f"{istr}{ext}"
-            source_path.rename(destination_path)
+            _, ext = os.path.splitext(filename.lower())
+            source_path = source_directory / filename
+            destination_path = target_directory / f"{istr}{ext}"
+
+            save_image(source_path, destination_path)
             write_picture(outfile, destination_path)
-            write_description(outfile, "")
+            write_description(outfile, description)
 
-def main(zip_files):
-    for zip_path in zip_files:
-        process_zip_file(zip_path)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print('Error: wrong number of arguments. Usage: ./plog.py <ZIP_FILE> [ZIP_FILE ...]')
+        print("Error: wrong number of arguments. Usage: ./plog.py <DATE>")
     else:
-        main(sys.argv[1:])
+        main(sys.argv[1])
