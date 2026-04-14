@@ -55,9 +55,10 @@ I would have easy access to statistics on my games if had a premium subscription
   </tr>
 </table>
 
-## Parsing the statstable
+### Parsing the statstable
 
 Pandas' `read_html` method gives the `<td>` elements as flattened text:
+
 
 ```python
 import pandas as pd
@@ -66,6 +67,7 @@ html = pd.read_html("statstable.html", encoding="utf-8")
 df = html[0].rename(columns={0: "game", 1: "time_info", 2: "result_info", 3: "elo_info"})
 df.head(1)
 ```
+
 
 <div>
 <style scoped>
@@ -103,7 +105,9 @@ df.head(1)
 </table>
 </div>
 
+
 We can get the right structure with a few custom extraction functions:
+
 
 ```python
 from datetime import datetime
@@ -130,7 +134,9 @@ def parse_new_elo(cell: str) -> int:
     return int(cell.split()[2])
 ```
 
+
 The only games that fail this format are the ones where the table was abandoned. This was the case in 42 games:
+
 
 ```python
 abandoned_mask = df["elo_info"].str.contains("abandoned")
@@ -138,7 +144,9 @@ sum(abandoned_mask)
 ```
 42
 
+
 For the sake of simplicity, we can remove these games. We also apply all the parsing to get the information we want:
+
 
 ```python
 df = df[~abandoned_mask]
@@ -151,6 +159,7 @@ df = df[["datetime", "duration", "winner", "delta", "new_elo"]]
 df = df.sort_values("datetime").reset_index(drop=True)
 df.head(1)
 ```
+
 
 <div>
 <style scoped>
@@ -190,9 +199,12 @@ df.head(1)
 </table>
 </div>
 
-## Analyses
 
-### Play rate
+### Analyses
+
+
+#### Play rate
+
 
 ```python
 first = df["datetime"].min()
@@ -203,13 +215,16 @@ print(f"First game: {first:%m/%d/%Y}, last game: {last:%m/%d/%Y}, total games: {
 
 First game: 02/04/2024, last game: 04/05/2026, total games: 753
 
+
 ```python
 by_day = df.assign(day=df["datetime"].dt.date).groupby("day").size()
 busiest_day = by_day.idxmax()
 print(f"Most games in one day: {busiest_day} ({by_day.max()} games)")
 ```
 
+
 Most games in one day: 2025-07-20 (9 games)
+
 
 ```python
 by_month_n = df.groupby(df["datetime"].dt.to_period("M")).size()
@@ -219,7 +234,9 @@ print(
 )
 ```
 
+
 Busiest calendar month: January 2026 (74 games)
+
 
 ```python
 import matplotlib.pyplot as plt
@@ -238,7 +255,7 @@ fig.savefig("games_per_month.png", dpi=120)
 ![Games per month]({{ "/img/games_per_month.png" | prepend: site.baseurl }})
 
 
-### Win rate
+#### Win rate
 
 ```python
 win_pct = 100 * df["winner"].mean()
@@ -267,9 +284,12 @@ My win rate increased slightly over time. I do have to qualify that by saying I 
 might skip a match up with too much of a discrepancy of ELO (especially when they are much higher than me). I think this
 selecting behaviour is more impactful than me becoming a better player.
 
-### ELO progression
+
+#### ELO progression
+
 
 ELO progression is a better indication of skill. Everyone starts out with an ELO of **1**.
+
 
 ```python
 elo_min = df["new_elo"].min()
@@ -280,6 +300,7 @@ print(f"Lowest ELO: {elo_min}, highest: {elo_max} on {at_max:%m/%d/%Y at %H:%M}"
 ```
 
 Lowest ELO: 1, highest: 516 on 01/27/2026 at 11:28
+
 
 ```python
 fig, ax = plt.subplots(figsize=(9, 4))
@@ -295,6 +316,8 @@ fig.savefig("arknova_elo_progression.png", dpi=120)
 ![ELO after each game over time]({{ "/img/elo_progression.png" | prepend: site.baseurl }})
 
 My ELO progression shows a long stretch in the low-to-mid 300s through much of 2024, then a climb through 2025 into the mid-400s.
+
+#### Future
 
 There are more analyses to be done. One thing I wonder about is, is how predictive earlier wins are for later wins (upswings and downswings).
 I have another thesis about how games tend to finish. I think more "luck" is involved in wins against higher ELO opponents, but modelling
