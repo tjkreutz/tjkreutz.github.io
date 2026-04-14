@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnails/thumbnail-8.png'
-keywords: ['td', 'th', 'tr', 'plt', 'read']
+keywords: ['plt', 'read', 'books', 'year', 'books_per_year']
 layout: post
 date: 2026-01-08 20:00:00 +0100
 title: "Visualising my Goodreads data"
@@ -45,7 +45,6 @@ circe_info[info_subset]
 
 
 | | Title | Author | My Rating | Date Added | Date Read |
-|---|-------|--------|-----------|------------|-----------|
 | 1 | Circe | Madeline Miller | 3 | 2025-12-22 | 2025-12-27 |
 
 
@@ -194,7 +193,6 @@ reading_goals
 
 
 | Year | Goal |
-|------|------|
 | 2012 | 0    |
 | 2013 | 0    |
 | 2014 | 0    |
