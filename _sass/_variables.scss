@@ -1,5 +1,3 @@
-@use "sass:color" as color;
-
 // Our variables
 $base-font-family: "paragraph";
 $bold-font-family: "paragraph-bold";
@@ -16,8 +14,8 @@ $background-color: #FFFFFF;
 $brand-color:      #6495ED;
 
 $grey-color:       #828282;
-$grey-color-light: color.adjust($grey-color, $lightness: 40%);
-$grey-color-dark:  color.adjust($grey-color, $lightness: -25%);
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
 $content-width:    800px;

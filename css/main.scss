@@ -2,10 +2,12 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@use "variables" as *;
-@use "base";
-@use "layout";
-@use "syntax-highlighting";
+@import
+        "variables",
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
 
 @font-face {
   font-family: "paragraph";
