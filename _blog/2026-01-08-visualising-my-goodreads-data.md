@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnails/thumbnail-8.png'
-keywords: ['plt', 'read', 'books', 'year', 'books_per_year']
+keywords: ['read', 'reading', 'books', 'matplotlib', 'import']
 layout: post
 date: 2026-01-08 20:00:00 +0100
 title: "Visualising my Goodreads data"

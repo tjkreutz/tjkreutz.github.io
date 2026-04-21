@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnails/thumbnail-9.png'
-keywords: ['div', 'df', 'th', 'class', 'td']
+keywords: ['elo', 'align', 'games', 'vertical', 'rate']
 layout: post
 date: 2026-04-14 08:00:00 +0100
 title: "Ark Nova (part 1)"
@@ -11,48 +11,24 @@ What's the opposite of sunk cost fallacy? I've played so much Ark Nova on the fr
 I would have easy access to statistics on my games if had a premium subscription. But `boardgamearena.com/gamestats` shows an HTML `table` element which I can download to start doing basic analyses. My latest game is shown as a row:
 
 <table>
-  <tr>
-    <td style="text-align:left;">
-      <div class="emblemwrap_l">
-        <img src="https://x.boardgamearena.net/data/themereleases/260408-0900/../../data/gamemedia/arknova/icon/default.png?h=1775641995313" class="game_icon">
-      </div>
-      <span class="table_name gamename">Ark Nova</span>
-      <br>
-      <span class="table_name bga-link smalltext">#XXXXXXX</span>
-    </td>
-    <td>
-      <div class="smalltext">04/05/2026 at 15:14</div>
-      <div class="smalltext">50 mn</div>
-    </td>
-    <td>
-      <div class="simple-score-entry">
-        <div class="rank">1st</div>
-        <div class="name"><span class="playername">me</span></div>
-        <div class="score">115  <div class="icon16 icon16_point"></div></div>
-      </div>
-      <div class="simple-score-entry">
-        <div class="rank">2nd</div>
-        <div class="name"><span class="playername">opponent</span></div>
-        <div class="score">106  <div class="icon16 icon16_point"></div></div>
-      </div>
-    </td>
-    <td>
-      <div style="display:none"><span class="smalltext"></span> → </div>
-      <div style="display:block">
-        <span style="display:none;" class="leavepenalty">
-          &nbsp;<span>
-            <div class="icon20 icon20_penaltyleave "></div>
-          </span>
-        </span>
-        <span class="smalltext">5 </span> → 
-        <div class="gamerank gamerank_strong ">
-          <span class="icon20 icon20_rankw"></span>
-          <span class="gamerank_value ">462</span>
-        </div>
-      </div>
-      <div class="smalltext"><span class="smalltext"></span></div>
-    </td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Time</th>
+      <th>Result</th>
+      <th>ELO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Ark Nova #XXXXXXX
+      </td>
+      <td>04/05/2026 at 15:14<br>50 mn</td>
+      <td>1st: me (115)<br>2nd: opponent (106)</td>
+      <td>5 → 462</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Parsing the statstable

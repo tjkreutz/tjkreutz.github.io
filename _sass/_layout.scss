@@ -1,3 +1,6 @@
+@use "sass:color" as color;
+@use "variables" as *;
+
 .site-header li {
     display:inline;
     padding-right: 8px;
@@ -95,6 +98,10 @@
 .post-content {
     margin-bottom: $spacing-unit;
 
+    > * + * {
+        margin-top: 6px;
+    }
+
     h2 {
         font-size: 32px;
 
@@ -117,6 +124,55 @@
         @include media-query($on-laptop) {
             font-size: 18px;
         }
+    }
+}
+
+.post .post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid $grey-color-light;
+    table-layout: fixed;
+    margin: 0;
+
+    th,
+    td {
+        border: 1px solid $grey-color-light;
+        padding: 6px 10px;
+        vertical-align: top;
+    }
+
+    thead th {
+        background: color.adjust($brand-color, $lightness: 38%);
+    }
+
+    tbody tr:nth-child(even) {
+        background: color.adjust($brand-color, $lightness: 46%);
+    }
+}
+
+.post .post-content table.dataframe {
+    table-layout: auto;
+}
+
+.post .post-content table img {
+    border: 0;
+}
+
+.post .post-content .image-pair {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-unit;
+    justify-content: center;
+    align-items: flex-start;
+
+    img {
+        flex: 1 1 45%;
+        min-width: 200px;
+        max-width: 100%;
+        max-height: 400px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
     }
 }
 
