@@ -23,7 +23,7 @@ def write_picture(outfile, path):
     outfile.write("---\n\n")
     outfile.write("class: middle, center\n\n")
     outfile.write(
-        '<img class="plog-picture" src="{{{{ site.baseurl }}}}/{0}" />\n\n'.format(path)
+        f"<img class='plog-picture' src='{{{{ site.baseurl }}}}/{path}' />\n\n"
     )
 
 
@@ -73,7 +73,7 @@ def main(datestring):
 
     if not takeout_metadata:
         print(f"No plog pictures found for {title}. Exiting.")
-        exit(0)
+        sys.exit(0)
 
     target_directory = Path(f"img/plog/{title}")
     target_directory.mkdir(parents=True, exist_ok=True)
