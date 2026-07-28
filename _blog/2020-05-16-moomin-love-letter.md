@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnails/thumbnail-6.png'
-keywords: ['card', 'cards', 'player', 'draw', 'game']
+keywords: ['card', 'discard', 'player', 'stinky', 'moominpappa']
 layout: post
 date: 2020-05-16 10:00:00 +0100
 title: "Moomin Love Letter"
@@ -12,8 +12,10 @@ There are several changes to the [rules of the original](https://www.ultraboardg
 
 The cards were nicely printed by [Cartamundi](https://www.makemygame.com/). 10 decks were made, consisted of the 21 playing cards, 5 overview cards and a rule card. Since the total comes to just 27 cards, ordering a normal deck of 54 cards allowed two full games to be printed, reducing the costs per deck.
 
-|  |  |
-| ![photo1]({{ "/img/moomin1.jpg" | prepend: site.baseurl }}){:height="400px"} | ![photo2]({{ "/img/moomin2.jpg" | prepend: site.baseurl }}){:height="400px"} |
+<div class="image-pair">
+  <img src="{{ "/img/moomin1.jpg" | prepend: site.baseurl }}" alt="Moomin Love Letter cards (photo 1)">
+  <img src="{{ "/img/moomin2.jpg" | prepend: site.baseurl }}" alt="Moomin Love Letter cards (photo 2)">
+</div>
 
 Here are the 10 cards:
 

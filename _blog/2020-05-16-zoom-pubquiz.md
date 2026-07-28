@@ -1,6 +1,6 @@
 ---
 thumbnail: '/img/thumbnails/thumbnail-7.png'
-keywords: ['zoom', 'team', 'questions', 'participants', 'br']
+keywords: ['zoom', 'team', 'members', 'rooms', 'room']
 layout: post
 date: 2020-05-16 13:40:00 +0100
 title: "Zoom Pubquiz"
